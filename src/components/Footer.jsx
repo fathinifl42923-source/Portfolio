@@ -36,7 +36,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-zinc-400 text-xs sm:text-sm max-w-sm mx-auto md:mx-0 leading-relaxed">
-              Aspiring Software Developer passionate about building robust web applications, ensuring software quality, and designing seamless user experiences.
+              Software Engineer passionate about building robust web applications, ensuring software quality, and designing seamless user experiences.
             </p>
           </div>
 
