@@ -104,7 +104,7 @@ export const educationList = [
     id: "hndit",
     degree: "Higher National Diploma in Information Technology (HNDIT)",
     institution: "ATI Kurunegala – SLIATE",
-    period: "Ongoing",
+    period: "2024 – Present",
     isOngoing: true,
     icon: "degree",
     description:
