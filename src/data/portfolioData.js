@@ -132,7 +132,7 @@ export const educationList = [
   },
   {
     id: "school",
-    degree: "Primary & Secondary Education (Grade 1 – A/L)",
+    degree: "School Education",
     institution: "Madeena National School",
     period: "2008 – 2023",
     isOngoing: false,
