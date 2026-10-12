@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  Download,
+  FileText,
   Sparkles,
   Terminal,
   Code2,
@@ -127,13 +127,15 @@ export default function Hero({ onOpenCvModal }) {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
 
-              <button
-                onClick={onOpenCvModal}
-                className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white/[0.04] hover:bg-purple-950/40 text-purple-100 hover:text-white font-semibold text-sm sm:text-base flex items-center justify-center gap-2.5 border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300"
+              <a
+                href={personalInfo.cvPath}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white/[0.04] hover:bg-purple-950/40 text-purple-100 hover:text-white font-semibold text-sm sm:text-base flex items-center justify-center gap-2.5 border border-purple-500/30 hover:border-purple-400/60 transition-all duration-300 group cursor-pointer"
               >
-                <Download className="w-4 h-4 text-purple-400" />
-                <span>Download CV</span>
-              </button>
+                <FileText className="w-4 h-4 text-purple-400 group-hover:scale-110 transition-transform" />
+                <span>Resume</span>
+              </a>
 
               {/* Social Icons */}
               <div className="flex items-center gap-3 pt-2 sm:pt-0 sm:ml-2">

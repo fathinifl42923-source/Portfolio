@@ -98,16 +98,18 @@ export default function Navbar({ onOpenCvModal }) {
             })}
           </nav>
 
-          {/* Desktop Right CTA (Download CV) */}
+          {/* Desktop Right CTA (Resume) */}
           <div className="hidden lg:flex items-center gap-3">
-            <button
-              onClick={onOpenCvModal}
-              className="px-4 py-2 text-xs sm:text-sm font-semibold rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white flex items-center gap-2 purple-button-glow transition-all duration-300 border border-purple-400/30"
-              aria-label="Download CV"
+            <a
+              href={personalInfo.cvPath}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 text-xs sm:text-sm font-semibold rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white flex items-center gap-2 purple-button-glow transition-all duration-300 border border-purple-400/30 cursor-pointer"
+              aria-label="View Resume"
             >
               <FileText className="w-3.5 h-3.5" />
-              <span>Resume / CV</span>
-            </button>
+              <span>Resume</span>
+            </a>
           </div>
 
           {/* Mobile Hamburger Button */}
@@ -157,16 +159,16 @@ export default function Navbar({ onOpenCvModal }) {
               })}
 
               <div className="pt-4 border-t border-purple-500/15 flex flex-col gap-3">
-                <button
-                  onClick={() => {
-                    setIsOpen(false);
-                    onOpenCvModal();
-                  }}
-                  className="w-full py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold text-sm flex items-center justify-center gap-2 purple-button-glow border border-purple-400/30"
+                <a
+                  href={personalInfo.cvPath}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold text-sm flex items-center justify-center gap-2 purple-button-glow border border-purple-400/30 cursor-pointer"
                 >
                   <FileText className="w-4 h-4" />
-                  <span>Download CV</span>
-                </button>
+                  <span>Resume</span>
+                </a>
               </div>
             </div>
           </motion.div>
