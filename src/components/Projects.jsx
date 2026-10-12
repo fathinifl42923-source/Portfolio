@@ -19,6 +19,10 @@ export default function Projects() {
 
   const handleLinkClick = (e, project, type) => {
     e.preventDefault();
+    if (project.isCurrentSite && type === "demo") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
     if (project.isPlaceholderLink) {
       setSelectedPlaceholder({
         title: project.title,
@@ -28,7 +32,13 @@ export default function Projects() {
     } else {
       const url = type === "github" ? project.githubUrl : project.demoUrl;
       if (url && url !== "#") {
-        window.open(url, "_blank", "noopener,noreferrer");
+        if (url.startsWith("#")) {
+          const el = document.querySelector(url);
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+          else window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          window.open(url, "_blank", "noopener,noreferrer");
+        }
       }
     }
   };
@@ -47,7 +57,7 @@ export default function Projects() {
         />
 
         {/* Project Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -61,7 +71,7 @@ export default function Projects() {
               {/* Card Header Ambient Stripe */}
               <div className="h-2 w-full bg-gradient-to-r from-purple-600 via-violet-500 to-indigo-600" />
 
-              <div className="p-7 sm:p-9 flex-1 flex flex-col justify-between">
+              <div className="p-7 sm:p-8 flex-1 flex flex-col justify-between">
                 <div>
                   {/* Top Bar with Project Number & Highlight */}
                   <div className="flex items-center justify-between gap-2 mb-4">
@@ -75,12 +85,19 @@ export default function Projects() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-4 group-hover:text-purple-200 transition-colors tracking-tight">
+                  <h3 className="text-2xl font-extrabold text-white mb-1.5 group-hover:text-purple-200 transition-colors tracking-tight">
                     {project.title}
                   </h3>
 
+                  {/* Subtitle */}
+                  {project.subtitle && (
+                    <p className="text-sm font-semibold text-purple-300/90 mb-4">
+                      {project.subtitle}
+                    </p>
+                  )}
+
                   {/* Description */}
-                  <p className="text-zinc-300/90 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+                  <p className="text-zinc-300/90 text-sm leading-relaxed mb-6 font-normal">
                     {project.description}
                   </p>
 
@@ -106,19 +123,30 @@ export default function Projects() {
                 <div className="pt-6 border-t border-purple-500/15 flex flex-col sm:flex-row items-center gap-3">
                   <button
                     onClick={(e) => handleLinkClick(e, project, "github")}
-                    className="w-full sm:w-1/2 py-3 px-4 rounded-xl bg-purple-950/60 hover:bg-purple-900/60 border border-purple-500/30 hover:border-purple-400/60 text-purple-100 hover:text-white text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-200 shadow-sm"
+                    className="w-full sm:w-1/2 py-3 px-3 rounded-xl bg-purple-950/60 hover:bg-purple-900/60 border border-purple-500/30 hover:border-purple-400/60 text-purple-100 hover:text-white text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-200 shadow-sm"
                   >
                     <GithubIcon className="w-4 h-4 text-purple-400" />
-                    <span>GitHub Repository</span>
+                    <span>GitHub</span>
                   </button>
 
-                  <button
-                    onClick={(e) => handleLinkClick(e, project, "demo")}
-                    className="w-full sm:w-1/2 py-3 px-4 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 purple-button-glow transition-all duration-200 border border-purple-400/30"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    <span>Live Demo</span>
-                  </button>
+                  {project.isCurrentSite ? (
+                    <button
+                      onClick={(e) => handleLinkClick(e, project, "demo")}
+                      className="w-full sm:w-1/2 py-3 px-3 rounded-xl bg-gradient-to-r from-emerald-600 via-teal-600 to-purple-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-200 border border-emerald-400/40 shadow-sm"
+                    >
+                      <span className="w-2 h-2 rounded-full bg-emerald-300 animate-pulse" />
+                      <span>Live Site · You're Here</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </button>
+                  ) : (
+                    <button
+                      onClick={(e) => handleLinkClick(e, project, "demo")}
+                      className="w-full sm:w-1/2 py-3 px-4 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 purple-button-glow transition-all duration-200 border border-purple-400/30"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      <span>Live Demo</span>
+                    </button>
+                  )}
                 </div>
               </div>
             </motion.div>

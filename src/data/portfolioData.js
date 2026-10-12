@@ -241,8 +241,22 @@ export const skillCategories = [
 
 export const projects = [
   {
+    id: "personal-portfolio",
+    title: "M.N.F. Nifla — Portfolio",
+    subtitle: "Personal Developer Platform",
+    description:
+      "A fast, modern personal portfolio engineered to showcase engineering projects, core CS fundamentals, and interactive web experiences with custom typography, responsive design, and smooth animations.",
+    technologies: ["React.js", "Vite", "Framer Motion", "Tailwind CSS"],
+    githubUrl: "https://github.com/fathinifl42923-source/Portfolio",
+    demoUrl: "#home",
+    isCurrentSite: true,
+    isPlaceholderLink: false,
+    highlight: "Featured Project",
+  },
+  {
     id: "arafa-pharmacy",
     title: "New Arafa Pharmacy Inventory Management System",
+    subtitle: "Inventory & Stock Control",
     description:
       "A full-stack web application designed to manage pharmacy medicine inventory, stock quantities, batch and expiry tracking, supplier management, low-stock alerts, and inventory reports. The system supports role-based access for administrators and staff.",
     technologies: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MySQL"],
@@ -254,6 +268,7 @@ export const projects = [
   {
     id: "travel-guide",
     title: "Travel Guide & Destination Management System",
+    subtitle: "Destination Exploration Platform",
     description:
       "A web-based application that helps users discover travel destinations through category-based filtering, photo galleries, reviews, ratings, and favorites. It also provides administrative features for managing destination listings and user access.",
     technologies: ["PHP", "MySQL", "JavaScript", "HTML5", "CSS3", "PDO"],
