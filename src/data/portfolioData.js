@@ -204,6 +204,7 @@ export const skillCategories = [
     iconName: "Database",
     skills: [
       { name: "MySQL", icon: "Database" },
+      { name: "Firebase", icon: "Flame" },
     ],
   },
   {
