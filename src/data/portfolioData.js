@@ -7,7 +7,7 @@
 export const personalInfo = {
   name: "M.N.F. Nifla",
   initials: "MNF",
-  title: "Software Engineer",
+  title: "Intern Software Engineer",
   status: "Available for Opportunities",
   location: "Kurunegala, Sri Lanka",
   
