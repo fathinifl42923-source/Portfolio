@@ -271,8 +271,8 @@ export const projects = [
     description:
       "A web-based application that helps users discover travel destinations through category-based filtering, photo galleries, reviews, ratings, and favorites. It also provides administrative features for managing destination listings and user access.",
     technologies: ["PHP", "MySQL", "JavaScript", "HTML5", "CSS3", "PDO"],
-    githubUrl: "#", // Editable placeholder
-    isPlaceholderLink: true,
+    githubUrl: "https://github.com/fathinifl42923-source/Travel-Guide",
+    isPlaceholderLink: false,
     highlight: "Web Application",
   },
 ];
