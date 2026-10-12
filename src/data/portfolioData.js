@@ -238,6 +238,19 @@ export const skillCategories = [
       { name: "VS Code", icon: "Terminal" },
     ],
   },
+  {
+    id: "soft-skills",
+    title: "Soft Skills",
+    iconName: "Users",
+    skills: [
+      { name: "Problem Solving", icon: "Lightbulb" },
+      { name: "Team Collaboration", icon: "Users" },
+      { name: "Effective Communication", icon: "MessageSquare" },
+      { name: "Time Management", icon: "Clock" },
+      { name: "Adaptability & Fast Learning", icon: "Zap" },
+      { name: "Attention to Detail", icon: "Target" },
+    ],
+  },
 ];
 
 export const projects = [

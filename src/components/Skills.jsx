@@ -7,6 +7,7 @@ import {
   CheckSquare,
   PenTool,
   Wrench,
+  Users,
   Sparkles,
   Code2,
   CheckCircle2,
@@ -21,6 +22,7 @@ const categoryIconMap = {
   CheckSquare: CheckSquare,
   PenTool: PenTool,
   Wrench: Wrench,
+  Users: Users,
 };
 
 export default function Skills() {
