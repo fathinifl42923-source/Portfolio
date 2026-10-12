@@ -260,8 +260,8 @@ export const projects = [
     description:
       "A full-stack web application designed to manage pharmacy medicine inventory, stock quantities, batch and expiry tracking, supplier management, low-stock alerts, and inventory reports. The system supports role-based access for administrators and staff.",
     technologies: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MySQL"],
-    githubUrl: "#", // Editable placeholder
-    isPlaceholderLink: true,
+    githubUrl: "https://github.com/fathinifl42923-source/Arafa-Pharmacy",
+    isPlaceholderLink: false,
     highlight: "Full-Stack System",
   },
   {
