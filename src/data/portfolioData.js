@@ -9,7 +9,7 @@ export const personalInfo = {
   initials: "MNF",
   title: "Software Engineer",
   status: "Available for Opportunities",
-  location: "Sri Lanka",
+  location: "Kurunegala, Sri Lanka",
   
   // Hero section description
   heroDescription:
@@ -25,12 +25,12 @@ export const personalInfo = {
   // CV download path in public folder
   cvPath: "/cv.pdf",
 
-  // Contact Information - Replace placeholders with actual details
+  // Contact Information
   contact: {
-    email: "your.email@example.com", // <-- UPDATE WITH YOUR ACTUAL EMAIL
-    phone: "+94 XX XXX XXXX", // <-- UPDATE WITH YOUR PHONE NUMBER
-    location: "Sri Lanka",
-    github: "https://github.com/fathinifl42923-source", // <-- UPDATE WITH YOUR GITHUB PROFILE
+    email: "fathinifl42923@gmail.com",
+    phone: "0770235078",
+    location: "Kurunegala, Sri Lanka",
+    github: "https://github.com/fathinifl42923-source",
     linkedin: "https://www.linkedin.com/in/nifla-nusky-686569437",
   },
 };
