@@ -10,7 +10,6 @@ import {
   Users,
   Sparkles,
   Code2,
-  CheckCircle2,
 } from "lucide-react";
 import SectionHeader from "./SectionHeader";
 import { skillCategories } from "../data/portfolioData";
@@ -84,13 +83,6 @@ export default function Skills() {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-purple-500/10 flex items-center justify-between text-[11px] text-zinc-400">
-                  <span className="flex items-center gap-1 text-purple-300/80">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-purple-400" />
-                    Active Practice
-                  </span>
-                  <span className="font-mono text-purple-400/60">Practical Stack</span>
-                </div>
               </motion.div>
             );
           })}
