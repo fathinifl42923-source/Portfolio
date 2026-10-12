@@ -132,13 +132,13 @@ export const educationList = [
   },
   {
     id: "school",
-    degree: "Secondary Education",
+    degree: "Primary & Secondary Education (Grade 1 – A/L)",
     institution: "Madeena National School",
-    period: "Completed",
+    period: "2008 – 2023",
     isOngoing: false,
     icon: "school",
     description:
-      "Solid academic foundation nurturing discipline, analytical thinking, and early passion for information technology.",
+      "Completed comprehensive school education from Grade 1 to G.C.E. Advanced Level (A/L), establishing a strong foundation in academics, discipline, and analytical problem-solving.",
   },
 ];
 
