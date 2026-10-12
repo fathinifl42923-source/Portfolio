@@ -123,13 +123,14 @@ export default function Projects() {
                 <div className="pt-6 border-t border-purple-500/15 flex flex-col sm:flex-row items-center gap-3">
                   <button
                     onClick={(e) => handleLinkClick(e, project, "github")}
-                    className="w-full sm:w-1/2 py-3 px-3 rounded-xl bg-purple-950/60 hover:bg-purple-900/60 border border-purple-500/30 hover:border-purple-400/60 text-purple-100 hover:text-white text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-200 shadow-sm"
+                    className={`w-full ${project.isCurrentSite ? "sm:w-1/2" : "w-full"} py-3 px-3 rounded-xl bg-purple-950/60 hover:bg-purple-900/60 border border-purple-500/30 hover:border-purple-400/60 text-purple-100 hover:text-white text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-200 shadow-sm`}
                   >
                     <GithubIcon className="w-4 h-4 text-purple-400" />
-                    <span>GitHub</span>
+                    <span>GitHub Repository</span>
                   </button>
 
-                  {project.isCurrentSite ? (
+                  {/* Only Portfolio project has Live Site / Live Demo */}
+                  {project.isCurrentSite && (
                     <button
                       onClick={(e) => handleLinkClick(e, project, "demo")}
                       className="w-full sm:w-1/2 py-3 px-3 rounded-xl bg-gradient-to-r from-emerald-600 via-teal-600 to-purple-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-200 border border-emerald-400/40 shadow-sm"
@@ -137,14 +138,6 @@ export default function Projects() {
                       <span className="w-2 h-2 rounded-full bg-emerald-300 animate-pulse" />
                       <span>Live Site · You're Here</span>
                       <ExternalLink className="w-3.5 h-3.5" />
-                    </button>
-                  ) : (
-                    <button
-                      onClick={(e) => handleLinkClick(e, project, "demo")}
-                      className="w-full sm:w-1/2 py-3 px-4 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 purple-button-glow transition-all duration-200 border border-purple-400/30"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      <span>Live Demo</span>
                     </button>
                   )}
                 </div>

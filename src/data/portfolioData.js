@@ -261,7 +261,6 @@ export const projects = [
       "A full-stack web application designed to manage pharmacy medicine inventory, stock quantities, batch and expiry tracking, supplier management, low-stock alerts, and inventory reports. The system supports role-based access for administrators and staff.",
     technologies: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MySQL"],
     githubUrl: "#", // Editable placeholder
-    demoUrl: "#", // Editable placeholder
     isPlaceholderLink: true,
     highlight: "Full-Stack System",
   },
@@ -273,7 +272,6 @@ export const projects = [
       "A web-based application that helps users discover travel destinations through category-based filtering, photo galleries, reviews, ratings, and favorites. It also provides administrative features for managing destination listings and user access.",
     technologies: ["PHP", "MySQL", "JavaScript", "HTML5", "CSS3", "PDO"],
     githubUrl: "#", // Editable placeholder
-    demoUrl: "#", // Editable placeholder
     isPlaceholderLink: true,
     highlight: "Web Application",
   },
