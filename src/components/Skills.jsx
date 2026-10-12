@@ -65,9 +65,6 @@ export default function Skills() {
                       <h3 className="text-lg font-bold text-white group-hover:text-purple-200 transition-colors">
                         {category.title}
                       </h3>
-                      <span className="text-xs text-purple-400/70 font-mono">
-                        {category.skills.length} skills listed
-                      </span>
                     </div>
                   </div>
 
