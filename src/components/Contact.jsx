@@ -182,15 +182,7 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Note on editing placeholders */}
-            <div className="p-4 rounded-2xl bg-[#0a0513] border border-purple-500/20 text-center">
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                💡 <span className="text-purple-300 font-medium">Quick Customization Tip:</span> You can update your email, phone, GitHub, and LinkedIn links in one place inside{" "}
-                <code className="text-purple-300 font-mono bg-purple-950/60 px-1.5 py-0.5 rounded">
-                  src/data/portfolioData.js
-                </code>.
-              </p>
-            </div>
+
           </motion.div>
         </div>
       </div>
