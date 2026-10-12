@@ -41,6 +41,7 @@ export default function Skills() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {skillCategories.map((category, index) => {
             const Icon = categoryIconMap[category.iconName] || Layout;
+            const isSoftSkills = category.id === "soft-skills";
 
             return (
               <motion.div
@@ -50,7 +51,9 @@ export default function Skills() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                className="group relative rounded-3xl p-7 glass-panel bg-[#130a24]/85 border border-purple-500/20 hover:border-purple-400/50 transition-all duration-300 shadow-lg hover:shadow-glow-md flex flex-col justify-between"
+                className={`group relative rounded-3xl p-7 glass-panel bg-[#130a24]/85 border border-purple-500/20 hover:border-purple-400/50 transition-all duration-300 shadow-lg hover:shadow-glow-md flex flex-col justify-between ${
+                  isSoftSkills ? "col-span-1 md:col-span-2 lg:col-span-3" : ""
+                }`}
               >
                 <div>
                   {/* Category Header */}
@@ -68,19 +71,48 @@ export default function Skills() {
                     </div>
                   </div>
 
-                  {/* Skills Pills List */}
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {category.skills.map((skill) => (
-                      <motion.div
-                        key={skill.name}
-                        whileHover={{ scale: 1.05 }}
-                        className="px-3.5 py-2 rounded-xl bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/60 text-zinc-200 hover:text-white text-xs sm:text-sm font-medium transition-all duration-200 flex items-center gap-2 shadow-sm"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-purple-400 group-hover:bg-purple-300" />
-                        <span>{skill.name}</span>
-                      </motion.div>
-                    ))}
-                  </div>
+                  {/* Skills Pills List: 3 and 3 side-by-side for Soft Skills */}
+                  {isSoftSkills ? (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 max-w-3xl">
+                      <div className="flex flex-col gap-2.5">
+                        {category.skills.slice(0, 3).map((skill) => (
+                          <motion.div
+                            key={skill.name}
+                            whileHover={{ scale: 1.02 }}
+                            className="px-4 py-2.5 rounded-xl bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/60 text-zinc-200 hover:text-white text-xs sm:text-sm font-medium transition-all duration-200 flex items-center gap-2.5 shadow-sm"
+                          >
+                            <span className="w-1.5 h-1.5 rounded-full bg-purple-400 group-hover:bg-purple-300 flex-shrink-0" />
+                            <span>{skill.name}</span>
+                          </motion.div>
+                        ))}
+                      </div>
+                      <div className="flex flex-col gap-2.5">
+                        {category.skills.slice(3, 6).map((skill) => (
+                          <motion.div
+                            key={skill.name}
+                            whileHover={{ scale: 1.02 }}
+                            className="px-4 py-2.5 rounded-xl bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/60 text-zinc-200 hover:text-white text-xs sm:text-sm font-medium transition-all duration-200 flex items-center gap-2.5 shadow-sm"
+                          >
+                            <span className="w-1.5 h-1.5 rounded-full bg-purple-400 group-hover:bg-purple-300 flex-shrink-0" />
+                            <span>{skill.name}</span>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {category.skills.map((skill) => (
+                        <motion.div
+                          key={skill.name}
+                          whileHover={{ scale: 1.05 }}
+                          className="px-3.5 py-2 rounded-xl bg-purple-950/40 hover:bg-purple-900/60 border border-purple-500/25 hover:border-purple-400/60 text-zinc-200 hover:text-white text-xs sm:text-sm font-medium transition-all duration-200 flex items-center gap-2 shadow-sm"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-purple-400 group-hover:bg-purple-300" />
+                          <span>{skill.name}</span>
+                        </motion.div>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
               </motion.div>
