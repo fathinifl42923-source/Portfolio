@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FileText, Download, X, AlertCircle, CheckCircle2 } from "lucide-react";
+import { FileText, Download, X, AlertCircle, CheckCircle2, ExternalLink } from "lucide-react";
 import { personalInfo } from "../data/portfolioData";
 
 export default function CvModal({ isOpen, onClose }) {
@@ -40,22 +40,22 @@ export default function CvModal({ isOpen, onClose }) {
             </div>
           </div>
 
-          {/* Setup / Instructions Notice */}
-          <div className="p-4 rounded-2xl bg-purple-950/40 border border-purple-500/25 space-y-3 mb-6">
-            <div className="flex items-start gap-2.5 text-xs text-zinc-300">
-              <AlertCircle className="w-4 h-4 text-purple-400 flex-shrink-0 mt-0.5" />
-              <div>
-                <p className="font-semibold text-white mb-1">CV File Setup Instructions:</p>
-                <p className="text-zinc-300 leading-relaxed">
-                  The portfolio is preconfigured to download from the path:{" "}
-                  <code className="bg-[#0a0514] px-1.5 py-0.5 rounded text-purple-300 font-mono">
-                    /cv.pdf
-                  </code>
-                </p>
-                <p className="mt-1.5 text-zinc-400">
-                  Simply save your PDF file inside the project's <strong className="text-purple-200">public</strong> folder and name it <strong className="text-purple-200">cv.pdf</strong>.
-                </p>
-              </div>
+          {/* CV Information & Format Card */}
+          <div className="p-4 rounded-2xl bg-purple-950/40 border border-purple-500/25 space-y-2 mb-6">
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-zinc-400">Document:</span>
+              <span className="text-white font-medium">MNF_Nifla_CV.pdf (Official Resume)</span>
+            </div>
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-zinc-400">Target Role:</span>
+              <span className="text-purple-300 font-medium">Intern Software Engineer</span>
+            </div>
+            <div className="flex items-center justify-between text-xs pt-1 border-t border-purple-500/15">
+              <span className="text-zinc-400">Status:</span>
+              <span className="inline-flex items-center gap-1 text-emerald-300 font-semibold">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                ATS-Friendly PDF Ready
+              </span>
             </div>
           </div>
 
@@ -65,15 +65,26 @@ export default function CvModal({ isOpen, onClose }) {
               href={personalInfo.cvPath}
               download="MNF_Nifla_CV.pdf"
               onClick={onClose}
-              className="w-full sm:w-auto flex-1 py-3.5 px-6 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-semibold text-sm flex items-center justify-center gap-2 purple-button-glow transition-all duration-200 border border-purple-400/30"
+              className="w-full sm:flex-1 py-3 px-5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 purple-button-glow transition-all duration-200 border border-purple-400/30"
             >
               <Download className="w-4 h-4" />
-              <span>Download CV (cv.pdf)</span>
+              <span>Download CV</span>
+            </a>
+
+            <a
+              href={personalInfo.cvPath}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={onClose}
+              className="w-full sm:w-auto py-3 px-5 rounded-xl bg-purple-950/60 hover:bg-purple-900/60 border border-purple-500/30 hover:border-purple-400/60 text-purple-200 hover:text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors"
+            >
+              <ExternalLink className="w-4 h-4" />
+              <span>Preview</span>
             </a>
 
             <button
               onClick={onClose}
-              className="w-full sm:w-auto py-3.5 px-6 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-300 hover:text-white font-medium text-sm transition-colors"
+              className="w-full sm:w-auto py-3 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-300 hover:text-white font-medium text-xs sm:text-sm transition-colors"
             >
               Close
             </button>
