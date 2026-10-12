@@ -31,7 +31,7 @@ export const personalInfo = {
     phone: "+94 XX XXX XXXX", // <-- UPDATE WITH YOUR PHONE NUMBER
     location: "Sri Lanka",
     github: "https://github.com/fathinifl42923-source", // <-- UPDATE WITH YOUR GITHUB PROFILE
-    linkedin: "https://linkedin.com/in/your-username", // <-- UPDATE WITH YOUR LINKEDIN PROFILE
+    linkedin: "https://www.linkedin.com/in/nifla-nusky-686569437",
   },
 };
 
