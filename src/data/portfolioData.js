@@ -104,17 +104,39 @@ export const educationList = [
     id: "hndit",
     degree: "Higher National Diploma in Information Technology (HNDIT)",
     institution: "ATI Kurunegala – SLIATE",
-    period: "[Academic Year - Ongoing / Editable]", // Placeholder
+    period: "Ongoing",
     isOngoing: true,
+    icon: "degree",
     description:
       "Comprehensive curriculum focusing on Software Engineering, Database Systems, Web Development, Object-Oriented Programming, and Networking principles.",
+  },
+  {
+    id: "diploma-english",
+    degree: "Diploma in English",
+    institution: "Ceylon College of Applied Studies (CCAS)",
+    period: "2023",
+    isOngoing: false,
+    icon: "book",
+    description:
+      "Comprehensive diploma program developing professional English communication, technical writing, effective presentations, and business correspondence skills.",
+  },
+  {
+    id: "nvq-level-3",
+    degree: "National Certificate, Computer Applications Assistant (NVQ Level 3)",
+    institution: "Athugalpura Village Development Association (AVDA)",
+    period: "2019",
+    isOngoing: false,
+    icon: "award",
+    description:
+      "Accredited vocational certification covering core computer applications, office productivity suites, digital workflows, and practical IT assistance fundamentals.",
   },
   {
     id: "school",
     degree: "Secondary Education",
     institution: "Madeena National School",
-    period: "[School Years / Editable]", // Placeholder
+    period: "Completed",
     isOngoing: false,
+    icon: "school",
     description:
       "Solid academic foundation nurturing discipline, analytical thinking, and early passion for information technology.",
   },

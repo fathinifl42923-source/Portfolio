@@ -34,10 +34,14 @@ export default function Education() {
                 >
                   {/* Timeline Node Badge with Glow */}
                   <div className="absolute -left-[35px] sm:-left-[51px] top-1.5 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-tr from-purple-800 to-indigo-600 border-2 border-purple-400 flex items-center justify-center text-white shadow-glow-sm group-hover:scale-110 group-hover:shadow-glow-md transition-all">
-                    {isHndit ? (
-                      <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5" />
+                    {item.icon === "award" ? (
+                      <Award className="w-4 h-4 sm:w-5 sm:h-5 text-amber-300" />
+                    ) : item.icon === "book" ? (
+                      <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 text-purple-200" />
+                    ) : isHndit ? (
+                      <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-purple-200" />
                     ) : (
-                      <School className="w-4 h-4 sm:w-5 sm:h-5" />
+                      <School className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-200" />
                     )}
                   </div>
 
@@ -69,11 +73,6 @@ export default function Education() {
                     <p className="text-zinc-400 text-sm leading-relaxed">
                       {item.description}
                     </p>
-
-                    {/* Notice for placeholder */}
-                    <div className="mt-4 pt-3 border-t border-purple-500/10 flex items-center gap-2 text-[11px] text-zinc-500 font-mono">
-                      <span>* Period is an editable placeholder in portfolioData.js</span>
-                    </div>
                   </div>
                 </motion.div>
               );
